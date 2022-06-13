@@ -1,0 +1,183 @@
+.content {
+    display: inline-block;
+    width: 50%;
+    margin-top: -40px;
+    right: 0;
+}
+
+.f {
+    display: flex;
+    width: 900px;
+    height: 118px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.g {
+    width: 20%;
+}
+.g_img {
+  padding: 10px 0px;
+    margin-left: 25px;
+    width: 50px;
+    height: 100px;
+}
+.h {
+    width: 80%;
+    margin-right: 10px;
+}
+.i_name{
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    margin: 10px 10px;
+    padding: 10px 0;
+}
+.j {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    bottom: 0;
+}
+.fill {
+    font-size: 16px;
+    height: 30px;
+    font-weight: 400;
+    padding: 13px 50px 13px;
+    outline: 0;
+    border: 1px solid #AFD275;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  .fill::after {
+    content: "";
+    background-color: #AFD275;
+    border-radius: 10px;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+  }
+  
+  .fill:hover::after {
+    top: 0px;
+    left: 0px;
+  }
+  .button{
+    position: relative;
+    width: 50px;
+    background-color: rgb(239, 252, 229);
+    border-radius: 20px;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    cursor:pointer;
+    user-select:none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+    border: 1px solid #AFD275; /* Safari */
+  }
+  .buttonnon{
+    position: relative;
+    width: 50px;
+    background-color: rgb(240, 248, 234);
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-right: 10px;
+    color: rgb(63, 63, 63);
+    padding: 10px 20px;
+    user-select:none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s; /* Safari */
+  }
+  
+  .button:hover {
+    transition-duration: 0.1s;
+    background-color: #AFD275;
+  }
+  
+  .button:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    box-shadow: 0 0 10px 20px #AFD275;
+  }
+  
+  .button:active:after {
+    box-shadow: 0 0 0 0 white;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top:0;
+    opacity: 1;
+    transition: 0s;
+  }
+  
+  .button:active {
+    top: 1px;
+  }
+  /* Главная страница каталога */
+  .y {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .x, .s {
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .w, .r{
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: 500;
+  }
+  .v, .u, .t{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 500px;
+  }
+  .v1, .v2, .u1, .u2, .t1, .t2, .r{
+    background-color: #AFD275;
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 5px 5px rgba(0, 82, 24, 0.2);
+	color: #000000;
+	font-size: 14px;
+    font-weight: 600;
+	padding: 12px 25px;
+  }
+  .u1, .u2, .t1, .t2, .s {
+    margin-top: 10px;
+  }
+  .r {
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    margin: 10px auto;
+  }
+  
+  
+  

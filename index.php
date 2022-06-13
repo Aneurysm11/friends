@@ -1,0 +1,180 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="/assets/css/page.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+ </head>
+ <body>
+  <!-- Главная страница сайта -->
+   <div class="wrapper">
+      <!-- Шапка -->
+      <header class="header">
+         <div class="header__container _container">
+         <?php include "./header.php" ?>
+         </div>
+      </header>
+      <!-- Основная часть -->
+      <main class="page">
+         <div class="page__main-block main-block">
+            <div class="main-block__container _container">
+               <div class="main-block__rectangles">
+                   <ul class="main-block__res">
+                        <li class="main__item">
+                           <div class="rectangle_hams">
+                              <img class="img" src="/assets/images/hamster.png">
+                              <a href="" class="buttonG">ГРЫЗУНЫ</a>
+                           </div>
+                        </li>
+                        <li class="main__item">
+                           <div class="rectangle_dog">
+                              <img class="imgA" src="/assets/images/dog.png">
+                              <a href="" class="buttonD">СОБАКИ</a>
+                           </div>
+                        </li>
+                        <ul class="main-block__resC">
+                        <li class="main__itemC">
+                           <div class="rectangle_fish">
+                              <img class="imgCF" src="/assets/images/fish.png">
+                              <a href="" class="buttonFP">РЫБКИ</a>
+                           </div>
+                        </li>
+                        <li class="main__itemC">
+                           <div class="rectangle_parr">
+                              <img class="imgCP" src="/assets/images/parrot.png">
+                              <a href="" class="buttonFP">ПТИЦЫ</a>
+                           </div>
+                        </li>
+                        </ul>
+                        <li class="main__item">
+                           <div class="rectangle_cat">
+                              <img class="imgA" src="/assets/images/cat.png">
+                              <a href="/pages/category.php?id=%201" class="buttonC">КОШКИ</a>
+                           </div>
+                        </li>
+                        <li class="main__item">
+                           <div class="rectangle_rep">
+                              <img class="img" src="/assets/images/reptile.png">
+                              <a href="" class="buttonR">РЕПТИЛИИ</a>
+                           </div>
+                        </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="info_site _container">
+            <p class="site_title">Добро пожаловать на сайт магазина товаров для животных</br>"Верные друзья"!</p>
+            <div class="infoS">
+            <div class="infosite">
+               <p class="site_text">На нашем сайта Вы сможете ознакомиться с информацией о нашей компании,</br>просмотреть каталог 
+                  товаров и заказать интересующие Вас товары в любой</br>из наших магазинов для 
+                  самовывоза. Вашему вниманию представлены</br>сотни товаров хорошего качества для Ваших
+                  любимцев.</br></br>Желаем Вам приятных покупок!
+               </p>
+            </div>
+            <div class="img_site">
+               <a class="a" href="/pages//aboutCompany.php">О компании</a></br>
+               <a class="ac" href="/pages//catalog.php">Каталог</a>
+            </div>
+         </div>
+
+         <div class="sale _container">
+            <div class="saleCon">
+               <p class="sale__title">АКЦИИ</p>
+               <!-- Для первой строки акций -->
+         <?php 
+             include "/Server/data/htdocs/www/vendor/connect.php";
+             $query = "SELECT * FROM `discountonmain` where id < 4";
+             $req = mysqli_query($connect, $query);
+             $data_from_db = [];
+             while ($result = mysqli_fetch_assoc($req)) {
+                 $data_from_db[] = $result;
+             }
+          ?>
+               <div class="sale__chapter">   
+            <?php  
+            foreach($data_from_db as $sale_unit): ?>
+                <div class="sale__unit">
+                     <div class="block__image">
+                        <img class="img__product" src="<?php echo $sale_unit['image'] ?>">
+                     </div>
+                     <div class="block__info">
+                        <div class="info__head">
+                           <p class="product__title"><?php echo $sale_unit['product_name'] ?></p>
+                        </div>
+                        <div class="price__shop">
+                           <div class="price">
+                              <div class="price__old">
+                                 <p class="oldprice"><?php echo $sale_unit['old_price'] ?>₽</p>
+                              </div>
+                              <div class="price__new">
+                                 <p class="newprice"><?php echo $sale_unit['price'] ?></p>
+                              </div>
+                           </div>
+                           <div class="shop">
+                           <a class="product_link_with_id" data-id=<?php echo $sale_unit['id']?>><img class="img__shop" src="/assets/images/shop.svg"></a>
+                           </div>
+                        </div>
+                        <a class = "linkdescr" href="/pages/product_description.php?id= <?php echo $sale_unit['id'] ?>">Описание товара</a>
+                     </div>
+                </div>
+                <?php  endforeach; ?>
+               </div>
+               <div class="sale__chapter">  
+                   <!-- Для второй строки акций -->
+          <?php 
+             include "/Server/data/htdocs/www/vendor/connect.php";
+             $query = "SELECT * FROM `discountonmain` where id > 3 and id < 7";
+             $req = mysqli_query($connect, $query);
+             $data_from_db = [];
+             while ($result = mysqli_fetch_assoc($req)) {
+                 $data_from_db[] = $result;
+             }
+          ?> 
+            <?php  
+            foreach($data_from_db as $sale_unit): ?>
+                <div class="sale__unit">
+                     <div class="block__image">
+                        <img class="img__product" src="<?php echo $sale_unit['image'] ?>">
+                     </div>
+                     <div class="block__info">
+                        <div class="info__head">
+                           <p class="product__title"><?php echo $sale_unit['product_name'] ?></p>
+                        </div>
+                        <div class="price__shop">
+                           <div class="price">
+                              <div class="price__old">
+                                 <p class="oldprice"><?php echo $sale_unit['old_price'] ?>₽</p>
+                              </div>
+                              <div class="price__new">
+                                 <p class="newprice"><?php echo $sale_unit['price'] ?></p>
+                              </div>
+                           </div>
+                           <div class="shop">
+                           <a class="product_link_with_id" data-id=<?php echo $sale_unit['id']?>><img class="img__shop" src="/assets/images/shop.svg"></a>
+                           </div>
+                        </div>
+                        <a class = "linkdescr" href="/pages/product_description.php?id= <?php echo $sale_unit['id'] ?>">Описание товара</a>
+                     </div>
+                </div>
+                <?php  endforeach; ?>
+               </div>
+                 <!-- Кнопка для открытия всех акций -->
+               <a class="looksale" href="/pages//stock.php">Посмореть все акции</a>
+            </div>
+         </div>
+      </main>
+      <!-- Подвальная часть -->
+      <footer class="footer">
+         <div class="_container">
+            <?php include "./footer.php"?>
+         </div>
+      </footer>
+   </div>
+ </body>
+</html>

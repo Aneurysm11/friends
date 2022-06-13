@@ -1,0 +1,67 @@
+.cont {
+    display: flex;
+    justify-content: space-around;
+    margin: 25px 0;
+}
+.info_title{
+    font-size: 18px;
+    font-weight: 600;
+}
+.address {
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 20px;
+}
+.branch {
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 20px;
+}
+.add {
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.branch_add {
+    margin-left: 40px;
+    margin-top: 7px;
+}
+.phone {
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 20px;
+}
+.phones {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 40px;
+}
+.socialnetworks {
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 20px;
+}
+.socn {
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 40px;
+    margin-top: 7px;
+    text-decoration: underline;
+}
+.online_store {
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 20px;
+}
+.onlstore {
+    text-decoration: underline;
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 40px;
+    margin-top: 7px;
+}
